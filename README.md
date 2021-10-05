@@ -14,6 +14,8 @@ A new Flutter project.
 
 - Some Routes already created.
 
+- All pages created in lib/pages 
+
 
 
 
