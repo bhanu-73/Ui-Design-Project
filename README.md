@@ -10,7 +10,7 @@ A new Flutter project.
 
 - Added assets to pubspec.yaml
 
-- Added google_fonts to pubspec.yaml
+- Added google_fonts,font_awesome_flutter to pubspec.yaml
 
 - Some Routes already created.
 

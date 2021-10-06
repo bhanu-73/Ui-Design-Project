@@ -16,12 +16,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Normal UI',
-      initialRoute: 'welcomePage',
+      initialRoute: 'homePage',
       routes: {
         'welcomePage' : (context) => const WelcomePage(),
         'loginPage' : (context) => const LoginPage(),
         'registrationPage' : (context) => const RegisterPage(),
-        'homePage' : (context) => const HomePage(),
+        'homePage' : (context) => const Home(),
       },
     );
   }
