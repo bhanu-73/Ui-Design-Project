@@ -24,6 +24,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     
     return Scaffold(
+      backgroundColor: Colors.white.withAlpha(247),
       appBar: _appBar(context),
       bottomNavigationBar: _bNavBar(context,_selectedpage,_changePage),
       body: pages[_selectedpage]
