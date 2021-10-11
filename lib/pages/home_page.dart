@@ -64,7 +64,7 @@ Widget _bNavBar(context,selectedIndex,onTapFunction){
     selectedIconTheme: const IconThemeData(size: 30),
     unselectedIconTheme: const IconThemeData(size: 27),
     unselectedItemColor: const Color.fromARGB(255,115,115,115),
-    selectedItemColor: Colors.orangeAccent,
+    selectedItemColor: const Color.fromARGB(255,243,111,19),
     onTap: (i){onTapFunction(i);},
    
     );
@@ -121,7 +121,6 @@ Widget _categoiesContainer(context){
     child: ListView.builder(
       scrollDirection: Axis.horizontal,
       shrinkWrap: true,
-      itemCount: categories.length,
       itemBuilder: (context,index)
         {
           return Padding(
@@ -130,14 +129,14 @@ Widget _categoiesContainer(context){
               children: [
                 Container(
                   decoration: BoxDecoration(
-                    color: categories[index]![1],
+                    color: categories[index%5]![1],
                     shape: BoxShape.circle,
                   ),
-                  child: IconButton(icon: Icon(categories[index]![2]),onPressed: (){},),
+                  child: IconButton(icon: Icon(categories[index%5]![2]),onPressed: (){},),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 5),
-                child :Text(categories[index]![0],style: GoogleFonts.lato(fontSize: 20,fontWeight: FontWeight.w600,color: categories[index]![1]),)
+                child :Text(categories[index%5]![0],style: GoogleFonts.lato(fontSize: 20,fontWeight: FontWeight.w600,color: categories[index%5]![1]),)
                 ),
           ],
           )
@@ -172,9 +171,8 @@ Widget _listViewofProducts(context,map,percent){
     child: ListView.builder(
       shrinkWrap: true,
         scrollDirection: Axis.horizontal,
-        itemCount: map.length,
         itemBuilder: (context,index) {
-          return _productContainer(context, map[index]![0],map[index]![1],map[index]![2]);
+          return _productContainer(context, map[index%map.length]![0],map[index%map.length]![1],map[index%map.length]![2]);
         },),
   );
 }
@@ -189,7 +187,7 @@ Widget _productContainer(context,name,price,path){
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Padding(padding: const EdgeInsets.only(right: 0,top: 15),child:Text(name,style: GoogleFonts.lato(fontSize: 18,fontWeight: FontWeight.w700,),),),
-                Padding(padding: const EdgeInsets.only(left: 0,top: 15),child :Text(price,style: GoogleFonts.lato(fontSize: 18,fontWeight: FontWeight.w700,color: Colors.orangeAccent),)),
+                Padding(padding: const EdgeInsets.only(left: 0,top: 15),child :Text(price,style: GoogleFonts.lato(fontSize: 18,fontWeight: FontWeight.w700,color: const Color.fromARGB(255,243,111,19),),)),
               ],
             ),
           ],

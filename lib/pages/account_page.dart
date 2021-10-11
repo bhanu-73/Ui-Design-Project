@@ -17,13 +17,13 @@ class _AccountPageState extends State<AccountPage> {
         _profilePic(context),
         _name(context,"Vision"),
         _verificationContainer(context),
-        _myBox(context, "Edit Profile"),
-        _myBox(context, "Your Orders"),
-        _myBox(context, "Your Offers"),
-        _myBox(context, "Wish List"),
-        _myBox(context, "Manage Address"),
-        _myBox(context, "Payment Methods"),
-        _myBox(context, "Settings"),
+        _myBox(context, "Edit Profile",(){Navigator.pushNamed(context, 'editProfile');}),
+        _myBox(context, "Your Orders",(){}),
+        _myBox(context, "Your Offers",(){}),
+        _myBox(context, "Wish List",(){}),
+        _myBox(context, "Manage Address",(){}),
+        _myBox(context, "Payment Methods",(){}),
+        _myBox(context, "Settings",(){}),
 
       ],
     );     
@@ -32,28 +32,26 @@ class _AccountPageState extends State<AccountPage> {
 
 Widget _profilePic(context){
   return Container(
+    height: 130,
     margin: const EdgeInsets.only(top:35),
-          padding: const EdgeInsets.all(65),
+          padding: const EdgeInsets.all(0),
           decoration: BoxDecoration(
+            color: Colors.white,
             border: Border.all(color: Colors.white,width: 4),
             boxShadow: const [
               BoxShadow(
                 blurRadius: 4
               )
             ],
-            color: Colors.black,
             shape: BoxShape.circle,
-            image: const DecorationImage(
-              image: AssetImage("assets/a4.png",),
-              fit: BoxFit.contain
-              )
           ),
+          child: Image.asset("assets/man.png",scale: 7,)
         );
 }
 
 Widget _name(context,name){
   return Padding(padding: const EdgeInsets.only(top:10,bottom: 10),
-  child: Text(name,style: GoogleFonts.lato(fontSize: 27,fontWeight: FontWeight.w700),textAlign: TextAlign.center,),);
+  child: Text(name,style: GoogleFonts.montserrat(fontSize: 27,fontWeight: FontWeight.w500),textAlign: TextAlign.center,),);
 }
 
 Widget _verificationContainer(BuildContext context) {
@@ -66,8 +64,8 @@ Widget _verificationContainer(BuildContext context) {
     child: Column(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        Padding(padding : const EdgeInsets.only(bottom: 10),child: Text("Please Verify your email or number",style: GoogleFonts.lato(fontSize: 18,letterSpacing:0.5 ,fontWeight: FontWeight.w400),),),
-        Padding(padding : const EdgeInsets.only(bottom: 15),child: Text("Get new Offers",style: GoogleFonts.lato(fontSize: 16,letterSpacing: 0.5),),),
+        Padding(padding : const EdgeInsets.only(bottom: 10),child: Text("Please Verify your email or number",style: GoogleFonts.montserrat(fontSize: 18,letterSpacing:0 ,fontWeight: FontWeight.w400),),),
+        Padding(padding : const EdgeInsets.only(bottom: 15),child: Text("Get new Offers",style: GoogleFonts.montserrat(fontSize: 16,letterSpacing: 0.5),),),
         Stack(
           alignment: Alignment.centerRight,
             children: [
@@ -75,7 +73,7 @@ Widget _verificationContainer(BuildContext context) {
                 decoration: InputDecoration(
                   hintText: "+917338965354",
                   border: OutlineInputBorder(borderRadius: BorderRadius.circular(50)),  
-                  hintStyle: GoogleFonts.lato(fontWeight: FontWeight.w500,color: Colors.black)
+                  hintStyle: GoogleFonts.montserrat(fontWeight: FontWeight.w400,color: Colors.black)
                 ),
               ),
               Container(
@@ -86,7 +84,7 @@ Widget _verificationContainer(BuildContext context) {
                 child: TextButton(
                   style: TextButton.styleFrom(padding: const EdgeInsets.fromLTRB(25,19,25,19)),
                   onPressed: (){},
-                  child: Text("Verify Now",style: GoogleFonts.lato(fontSize: 16,color: Colors.white),),
+                  child: Text("Verify Now",style: GoogleFonts.montserrat(fontSize: 16,color: Colors.white),),
                   ),
               )
             ]
@@ -96,9 +94,9 @@ Widget _verificationContainer(BuildContext context) {
   );
 }
 
-Widget _myBox(context,name){
+Widget _myBox(context,name,func){
   return GestureDetector(
-    onTap: (){},
+    onTap: func,
     child: Container(
       padding: const EdgeInsets.all(15),
       margin: const EdgeInsets.fromLTRB(15,10,15,10),
@@ -111,7 +109,7 @@ Widget _myBox(context,name){
     child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Padding(padding: const EdgeInsets.only(),child: Text(name,style: GoogleFonts.lato(fontSize:18,fontWeight: FontWeight.w700),),),
+        Padding(padding: const EdgeInsets.only(),child: Text(name,style: GoogleFonts.montserrat(fontSize:18,fontWeight: FontWeight.w500),),),
         const Icon(Icons.arrow_forward_ios)
     ],),
   )
