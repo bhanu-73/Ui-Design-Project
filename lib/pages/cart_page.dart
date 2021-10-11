@@ -100,7 +100,7 @@ Widget _bottomBox(context){
         child: TextButton(
           child: Text("Continue",style: GoogleFonts.lato(fontSize: 18,fontWeight: FontWeight.w700,color: Colors.white),),
           style: TextButton.styleFrom(padding: const EdgeInsets.only(top: 10,bottom: 10)),
-          onPressed: (){},
+          onPressed: (){Navigator.pushNamed(context, 'notImplemented');},
         ),
       )
     ],),

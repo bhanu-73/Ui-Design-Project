@@ -38,7 +38,7 @@ Widget _profilePic(context){
             border: Border.all(color: Colors.white,width: 4),
             boxShadow: const [
               BoxShadow(
-                blurRadius: 4
+                blurRadius: 2
               )
             ],
             shape: BoxShape.circle,
@@ -76,7 +76,7 @@ Widget _button1(context){
     ),
     child: TextButton(
       child: Text("Save Profile",style: GoogleFonts.montserrat(fontSize: 22,color:Colors.white,fontWeight: FontWeight.w500),),
-      onPressed: (){},)
+      onPressed: (){Navigator.pushNamed(context, 'notImplemented');},)
   );
 }
 
@@ -90,6 +90,6 @@ Widget _button2(context){
     ),
     child: TextButton(
       child: Text("Change Password",style: GoogleFonts.montserrat(fontSize: 22,color:const Color.fromARGB(255,243,111,19),fontWeight: FontWeight.w500,),),
-      onPressed: (){},)
+      onPressed: (){Navigator.pushNamed(context, 'notImplemented');},)
   );
 }

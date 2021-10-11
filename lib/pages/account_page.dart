@@ -18,12 +18,11 @@ class _AccountPageState extends State<AccountPage> {
         _name(context,"Vision"),
         _verificationContainer(context),
         _myBox(context, "Edit Profile",(){Navigator.pushNamed(context, 'editProfile');}),
-        _myBox(context, "Your Orders",(){}),
-        _myBox(context, "Your Offers",(){}),
-        _myBox(context, "Wish List",(){}),
-        _myBox(context, "Manage Address",(){}),
-        _myBox(context, "Payment Methods",(){}),
-        _myBox(context, "Settings",(){}),
+        _myBox(context, "Your Orders",(){Navigator.pushNamed(context, 'notImplemented');}),
+        _myBox(context, "Your Offers",(){Navigator.pushNamed(context, 'notImplemented');}),
+        _myBox(context, "Manage Address",(){Navigator.pushNamed(context, 'notImplemented');}),
+        _myBox(context, "Payment Methods",(){Navigator.pushNamed(context, 'notImplemented');}),
+        _myBox(context, "Settings",(){Navigator.pushNamed(context, 'settings');}),
 
       ],
     );     
@@ -40,7 +39,7 @@ Widget _profilePic(context){
             border: Border.all(color: Colors.white,width: 4),
             boxShadow: const [
               BoxShadow(
-                blurRadius: 4
+                blurRadius: 2
               )
             ],
             shape: BoxShape.circle,
@@ -83,7 +82,7 @@ Widget _verificationContainer(BuildContext context) {
                 ),
                 child: TextButton(
                   style: TextButton.styleFrom(padding: const EdgeInsets.fromLTRB(25,19,25,19)),
-                  onPressed: (){},
+                  onPressed: (){Navigator.pushNamed(context, 'notImplemented');},
                   child: Text("Verify Now",style: GoogleFonts.montserrat(fontSize: 16,color: Colors.white),),
                   ),
               )
@@ -109,7 +108,7 @@ Widget _myBox(context,name,func){
     child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Padding(padding: const EdgeInsets.only(),child: Text(name,style: GoogleFonts.montserrat(fontSize:18,fontWeight: FontWeight.w500),),),
+        Padding(padding: const EdgeInsets.only(),child: Text(name,style: GoogleFonts.montserrat(fontSize:18,fontWeight: FontWeight.w400),),),
         const Icon(Icons.arrow_forward_ios)
     ],),
   )

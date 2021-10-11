@@ -12,7 +12,7 @@ class LoginPage extends StatelessWidget {
     return Scaffold(
       body :Stack(
         children: [
-          Padding(padding: const EdgeInsets.only(top: 155,left:30),child: Text("Login",style: GoogleFonts.lato(fontSize: 37,fontWeight: FontWeight.w700,color: const Color.fromRGBO(251, 171, 126, 1),),),),
+          Padding(padding: const EdgeInsets.only(top: 155,left:30),child: Text("Login",style: GoogleFonts.lato(fontSize: 37,fontWeight: FontWeight.w700,color: const Color.fromRGBO(247, 206, 104, 1),),),),
           _loginScrollView(context,0.28)
         ],
       ),

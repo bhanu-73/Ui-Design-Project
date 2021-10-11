@@ -44,7 +44,7 @@ PreferredSizeWidget _appBar(context){
       actions: [
         IconButton(
           icon: const Icon(Icons.search),
-          onPressed: (){},
+          onPressed: (){Navigator.pushNamed(context, 'notImplemented');},
         )
       ],
     );
@@ -89,7 +89,7 @@ class _HomePageState extends State<HomePage> {
         mainAxisAlignment:MainAxisAlignment.spaceBetween,
         children: [
           Padding(padding: const EdgeInsets.only(left: 15,bottom: 10),child:Text("New Arrivals",style: GoogleFonts.lato(fontSize: 20,fontWeight: FontWeight.w700),)),
-          Padding(padding: const EdgeInsets.only(right: 15,bottom: 10),child:Text("View All",style: GoogleFonts.lato(fontSize: 20,color: const Color.fromARGB(255,115,115,115)),))
+          Padding(padding: const EdgeInsets.only(right: 15,bottom: 10),child:TextButton(onPressed: (){Navigator.pushNamed(context, 'notImplemented');},child: Text("View All",style: GoogleFonts.lato(fontSize: 20,color: const Color.fromARGB(255,115,115,115)),))),
         ],
       ),
           _newArrivalsContainer(context),
@@ -97,7 +97,7 @@ class _HomePageState extends State<HomePage> {
         mainAxisAlignment:MainAxisAlignment.spaceBetween,
         children: [
           Padding(padding: const EdgeInsets.only(left: 15,bottom: 10),child:Text("Featured Products",style: GoogleFonts.lato(fontSize: 20,fontWeight: FontWeight.w700),)),
-          Padding(padding: const EdgeInsets.only(right: 15,bottom: 10),child:Text("View All",style: GoogleFonts.lato(fontSize: 20,color: const Color.fromARGB(255,115,115,115)),))
+          Padding(padding: const EdgeInsets.only(right: 15,bottom: 10),child:TextButton(onPressed:(){Navigator.pushNamed(context, 'notImplemented');},child:Text("View All",style: GoogleFonts.lato(fontSize: 20,color: const Color.fromARGB(255,115,115,115)),))),
         ],
       ),
           _featuredProductsContainer(context)
